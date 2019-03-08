@@ -159,11 +159,11 @@
             </objects>
             <point key="canvasLocation" x="1321" y="-668"/>
         </scene>
-        <!--Green-->
+        <!--Friends-->
         <scene sceneID="mYk-i1-Q5t">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bry-5K-NgW" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Green" id="yez-GK-4b0"/>
+                    <tabBarItem key="tabBarItem" title="Friends" id="yez-GK-4b0"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DWB-qo-gle">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -178,22 +178,42 @@
             </objects>
             <point key="canvasLocation" x="4141.6000000000004" y="-938.68065967016503"/>
         </scene>
-        <!--Table View Controller-->
+        <!--All Friends Controller Table View Controller-->
         <scene sceneID="vb2-VX-f4T">
             <objects>
-                <tableViewController id="1ge-ns-S3L" sceneMemberID="viewController">
+                <tableViewController id="1ge-ns-S3L" customClass="AllFriendsControllerTableViewController" customModule="GeekBrains_UI" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="agc-2n-kb4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.42073725039999998" green="0.69907707249999995" blue="0.16352454550000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.5795404314994812" green="0.67001259326934814" blue="0.49903517961502075" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="yqz-vG-9D8">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendCell" id="yqz-vG-9D8" customClass="AllFriendsCellTableViewCell" customModule="GeekBrains_UI" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yqz-vG-9D8" id="Cs9-WH-E0a">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friend" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sai-d9-iQq">
+                                            <rect key="frame" x="90" y="10.5" width="51" height="22.5"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Sai-d9-iQq" firstAttribute="bottom" secondItem="Cs9-WH-E0a" secondAttribute="bottomMargin" id="2Rn-xV-Ram"/>
+                                        <constraint firstItem="Sai-d9-iQq" firstAttribute="leading" secondItem="Cs9-WH-E0a" secondAttribute="leadingMargin" constant="74" id="PHP-JK-prD"/>
+                                        <constraint firstItem="Sai-d9-iQq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Cs9-WH-E0a" secondAttribute="leadingMargin" constant="74" id="a82-Nv-DiS"/>
+                                        <constraint firstItem="Sai-d9-iQq" firstAttribute="centerY" secondItem="Cs9-WH-E0a" secondAttribute="centerY" id="xt2-TB-tiF"/>
+                                        <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Sai-d9-iQq" secondAttribute="trailing" constant="199" id="yRa-8s-8x6"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.5795404314994812" green="0.67001259326934814" blue="0.49903517961502075" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="friendName" destination="Sai-d9-iQq" id="3WB-Mw-LiH"/>
+                                    <segue destination="brC-8u-ioa" kind="show" id="CZo-kQ-jrQ"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -207,18 +227,18 @@
                             <rect key="frame" x="142.5" y="7" width="90" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                            <state key="normal" title="Next">
+                            <state key="normal" title="All Photos &gt;">
                                 <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <connections>
-                                <segue destination="brC-8u-ioa" kind="show" id="AeS-g7-Frm"/>
+                                <segue destination="brC-8u-ioa" kind="show" identifier="avatarSegue" id="AeS-g7-Frm"/>
                             </connections>
                         </button>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MFD-oP-0aR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4996" y="-939"/>
+            <point key="canvasLocation" x="4996" y="-939.58020989505258"/>
         </scene>
         <!--Collection View Controller-->
         <scene sceneID="c4h-cg-z4V">
@@ -227,7 +247,7 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="XDm-Jh-IUG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.42073725039999998" green="0.69907707249999995" blue="0.16352454550000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.5795404314994812" green="0.67001259326934814" blue="0.49903517961502075" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DsE-f1-dPG">
                             <size key="itemSize" width="50" height="50"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -254,11 +274,11 @@
             </objects>
             <point key="canvasLocation" x="5825" y="-940"/>
         </scene>
-        <!--Yellow-->
+        <!--Groups-->
         <scene sceneID="u9Z-UH-EPz">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LCU-Zy-p7m" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Yellow" id="xxs-7N-K5J"/>
+                    <tabBarItem key="tabBarItem" title="Groups" id="xxs-7N-K5J"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZRp-SM-tC3">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -273,23 +293,42 @@
             </objects>
             <point key="canvasLocation" x="4141.6000000000004" y="-184.85757121439281"/>
         </scene>
-        <!--Table View Controller-->
+        <!--All Groups Controller Table View Controller-->
         <scene sceneID="O3K-2g-eRD">
             <objects>
-                <tableViewController id="WZt-aL-djA" sceneMemberID="viewController">
+                <tableViewController id="WZt-aL-djA" customClass="AllGroupsControllerTableViewController" customModule="GeekBrains_UI" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="E4T-uG-Jhu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.69156816710000002" green="0.663321885" blue="0.010497723420000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="FWZ-7Z-WID">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GroupCell" id="FWZ-7Z-WID" customClass="AllGroupsCellTableViewCell" customModule="GeekBrains_UI" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FWZ-7Z-WID" id="y5X-jQ-evs">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kmJ-NC-HvU">
+                                            <rect key="frame" x="99" y="11" width="49.5" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="kmJ-NC-HvU" secondAttribute="trailing" constant="131" id="Qf5-M5-tKX"/>
+                                        <constraint firstItem="kmJ-NC-HvU" firstAttribute="top" secondItem="y5X-jQ-evs" secondAttribute="topMargin" id="RT5-aA-V0U"/>
+                                        <constraint firstItem="kmJ-NC-HvU" firstAttribute="leading" secondItem="y5X-jQ-evs" secondAttribute="leadingMargin" constant="83" id="Xje-mV-e1z"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="kmJ-NC-HvU" secondAttribute="bottom" constant="1" id="adU-Ut-clh"/>
+                                        <constraint firstItem="kmJ-NC-HvU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="y5X-jQ-evs" secondAttribute="leadingMargin" constant="83" id="fKc-LM-cjf"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.69156816710000002" green="0.663321885" blue="0.010497723420000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="groupName" destination="kmJ-NC-HvU" id="qpJ-mK-fX8"/>
+                                    <segue destination="drc-G9-Jpo" kind="unwind" identifier="addGroup" unwindAction="addGroupWithSegue:" id="v2O-37-e2U"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -300,10 +339,10 @@
                     <navigationItem key="navigationItem" id="Gqs-Jk-oT8">
                         <nil key="title"/>
                         <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="M1P-YP-gBl">
-                            <rect key="frame" x="142.5" y="7" width="90" height="30"/>
+                            <rect key="frame" x="107" y="7" width="161" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                            <state key="normal" title="Next">
+                            <state key="normal" title="Go to My Groups &gt;">
                                 <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <connections>
@@ -313,25 +352,44 @@
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="915-RQ-gnu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="drc-G9-Jpo" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4996" y="-185"/>
+            <point key="canvasLocation" x="4996" y="-185.75712143928038"/>
         </scene>
-        <!--Table View Controller-->
+        <!--My Groups Controller Table View Controller-->
         <scene sceneID="vBP-zR-h8A">
             <objects>
-                <tableViewController id="YGT-xL-lbx" sceneMemberID="viewController">
+                <tableViewController id="YGT-xL-lbx" customClass="MyGroupsControllerTableViewController" customModule="GeekBrains_UI" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="7uf-aG-YAl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.69156816710000002" green="0.663321885" blue="0.010497723420000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="8dt-tt-I0V">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyGroupsCell" id="8dt-tt-I0V" customClass="MyGroupsCellTableViewCell" customModule="GeekBrains_UI" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8dt-tt-I0V" id="52X-33-0GE">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ekn-1s-39X">
+                                            <rect key="frame" x="99" y="11" width="49.5" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Ekn-1s-39X" firstAttribute="leading" secondItem="52X-33-0GE" secondAttribute="leadingMargin" constant="83" id="DNz-Lw-hMI"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Ekn-1s-39X" secondAttribute="trailing" constant="210.5" id="nuu-3q-n9k"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Ekn-1s-39X" secondAttribute="bottom" constant="1" id="u8C-xj-MbN"/>
+                                        <constraint firstItem="Ekn-1s-39X" firstAttribute="top" secondItem="52X-33-0GE" secondAttribute="topMargin" id="wRF-xS-Hym"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.6907925009727478" green="0.66312456130981445" blue="0.011686491779983044" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="myGroupName" destination="Ekn-1s-39X" id="lzK-EV-H0E"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -345,4 +403,7 @@
             <point key="canvasLocation" x="5825" y="-185"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="AeS-g7-Frm"/>
+    </inferredMetricsTieBreakers>
 </document>
