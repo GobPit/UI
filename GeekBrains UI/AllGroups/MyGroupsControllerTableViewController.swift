@@ -9,16 +9,14 @@
 import UIKit
 
 class MyGroupsControllerTableViewController: UITableViewController {
+    
+    
     var groups = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        title = "Мои Группы"
     }
 
     // MARK: - Table view data source
@@ -55,8 +53,9 @@ class MyGroupsControllerTableViewController: UITableViewController {
                 // Получаем группу по индексу
                 let group = allGroupsController.groups[indexPath.row]
                 // Проверяем, что такого города нет в списке
-                if !groups.contains(group) {
-                    groups.append(group)
+                if !groups.contains(group.title) {
+                    groups.append(group.title)
+                    
                     tableView.reloadData()
                 }
             }

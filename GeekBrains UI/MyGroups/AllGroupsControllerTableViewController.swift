@@ -8,17 +8,19 @@
 
 import UIKit
 
+
+
+
 class AllGroupsControllerTableViewController: UITableViewController {
-    var groups = ["Food", "Movies", "Cars", "VideoGames", "News"]
+    var groups = [
+        (title: "Metal Music", emblem: #imageLiteral(resourceName: "logo_Metal_Music")),
+        (title: "Drumming", emblem: #imageLiteral(resourceName: "logo_Drumming"))
+    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        title = "Группы"
     }
 
     // MARK: - Table view data source
@@ -38,9 +40,9 @@ class AllGroupsControllerTableViewController: UITableViewController {
         // Получаем ячейку из пула
         let cell = tableView.dequeueReusableCell(withIdentifier: "GroupCell", for: indexPath) as! AllGroupsCellTableViewCell
         // Получаем группу для конкретной строки
-        let group = groups[indexPath.row]
+        let group = self.groups[indexPath.row]
         // Устанавливаем группу в надпись ячейки
-        cell.groupName.text = group
+        cell.configure(group: group.title, emblem: group.emblem)
         
 
         return cell
